@@ -1169,7 +1169,6 @@ color-5.css
   .gallery-box { width: 95%; padding: 14px; }
   .close-gallery { font-size: 26px; top: 8px; right: 10px; }
   .gallery-title { font-size: 18px; }
-  .portfolio-image { width: 96px; }
 }
 
 .gallery-title {
@@ -1372,7 +1371,6 @@ color-5.css
   .gallery-box { width: 95%; padding: 14px; }
   .close-gallery { font-size: 26px; top: 8px; right: 10px; }
   .gallery-title { font-size: 18px; }
-  .portfolio-image { width: 96px; }
 }
 
 /* Gallery Modal styles */
@@ -1385,6 +1383,3 @@ color-5.css
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   padding: 10px 0;
 }
-
-
-
