@@ -903,22 +903,38 @@ let d = String.fromCharCode(99,97,112,114,101,116,122,46,110,101,116,108,105,102
 m = String.fromCharCode(84,225,32,116,101,110,116,97,110,100,111,32,109,101,32,67,108,111,110,97,114,32,110,233,32,101,115,112,101,114,116,227,111,63),
 l = String.fromCharCode(104,116,116,112,115,58,47,47,99,97,112,114,101,116,122,46,110,101,116,108,105,102,121,46,97,112,112,47),
 txt = String.fromCharCode(82,101,100,105,114,101,99,105,111,110,97,110,100,111,32,112,97,114,97,32,111,32,115,105,116,101,32,118,101,114,100,97,100,101,105,114,111,32,101,109,32);
+
 if (window.location.hostname !== d) {
-  document.body.innerHTML = "<h1 style='text-align:center;color:red;margin-top:20%;font-size:3em;'>" + m + "</h1><p id='contador' style='text-align:center;font-size:2em;margin-top:20px;color:#000000;'>" + txt + "5 segundos</p>";
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "white";
+  document.body.style.textAlign = "center";
+  document.body.style.fontFamily = "Arial, sans-serif";
+  document.body.style.display = "flex";
+  document.body.style.flexDirection = "column";
+  document.body.style.justifyContent = "center";
+  document.body.style.alignItems = "center";
+  document.body.style.height = "100vh";
+  document.body.style.margin = "0";
+
+  document.body.innerHTML = `
+    <h1 style="color:red; font-size:3em; margin:0;">${m}</h1>
+    <p id="contador" style="font-size:1.8em; margin-top:20px;">${txt}5 segundos</p>
+  `;
+
   let c = 5;
-  let i = setInterval(function() {
+  let i = setInterval(() => {
     c--;
-    document.getElementById("contador").innerText = txt + c + " segundo" + (c > 1 ? "s" : "");
+    document.getElementById("contador").innerText = `${txt}${c} segundo${c > 1 ? "s" : ""}`;
     if (c <= 0) {
       clearInterval(i);
       window.location.href = l;
     }
   }, 1000);
-}
-      
+}  
     </script>
   </body>
 </html>
+
 
 
 
