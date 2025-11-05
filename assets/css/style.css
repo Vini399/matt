@@ -22,8 +22,7 @@
 
 html {
   scrollbar-width: thin;
-  /* Cor escura sutil para o Light Mode */
-  scrollbar-color: rgba(48, 46, 77, 0.2) transparent;
+  scrollbar-color: rgb(255 255 255 / 12%) transparent;
 }
 
 /* Estilos para Chrome, Safari e Edge */
