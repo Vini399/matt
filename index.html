@@ -696,13 +696,6 @@
 
 window.addEventListener('load', () => {
   const portfolioGroups = document.querySelectorAll('.portfolio-group');
-  const lenis = new Lenis();
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
 
   portfolioGroups.forEach(group => {
     const observer = new IntersectionObserver((entries) => {
@@ -830,6 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
   </body>
 </html>
+
 
 
 
