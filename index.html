@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Matheus Capretz</title>
     <meta name="title" content="Matheus Capretz">
-    <meta name="description" content="By Vini Lindo.">
+    <meta name="description" content="Por Vini Lindo.">
 
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
@@ -59,7 +59,7 @@
         --bg-black50: #e8dfec;
         --text-black900: #302e4d;
         --text-black700: #504e70;
-        
+
         --skin-color: #1d2cff;
       }
 
@@ -389,6 +389,71 @@
         height: 400px;
         margin: auto;
         border-radius: 4px;
+      }
+
+      /* Ajustes para mobile */
+      @media (max-width: 991px) {
+        .home-row {
+          flex-direction: column;
+        }
+        
+        .home .home-info {
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 1;
+          margin-bottom: 30px;
+        }
+
+        .home .home-img {
+          display: block;
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 2;
+          position: relative;
+          margin: 20px 0;
+          padding: 20px;
+        }
+
+        .home .home-img::before,
+        .home .home-img::after {
+          content: "";
+          position: absolute;
+          height: 40px; /* Reduzido de 80px */
+          width: 40px; /* Reduzido de 80px */
+        }
+
+        .home .home-img::before {
+          border-top: 5px solid var(--skin-color); /* Reduzido de 10px */
+          border-left: 5px solid var(--skin-color);
+          left: 0;
+          top: 0;
+        }
+
+        .home .home-img::after {
+          border-bottom: 5px solid var(--skin-color);
+          border-right: 5px solid var(--skin-color);
+          right: 0;
+          bottom: 0;
+        }
+
+        .home .home-img img {
+          height: auto;
+          max-width: 80%;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .home-btn {
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 3;
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        .home-info p {
+          margin-bottom: 0;
+        }
       }
 
       /* ABOUT */
@@ -760,12 +825,66 @@
       }
 
       @media (max-width: 991px) {
+        .home-row {
+          flex-direction: column;
+        }
+        
         .home .home-info {
           flex: 0 0 100%;
           max-width: 100%;
+          order: 1;
+          margin-bottom: 30px;
         }
+
         .home .home-img {
-          display: none;
+          display: block;
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 2;
+          position: relative;
+          margin: 20px 0;
+          padding: 20px;
+        }
+
+        .home .home-img::before,
+        .home .home-img::after {
+          content: "";
+          position: absolute;
+          height: 40px; /* Reduzido de 80px */
+          width: 40px; /* Reduzido de 80px */
+        }
+
+        .home .home-img::before {
+          border-top: 5px solid var(--skin-color); /* Reduzido de 10px */
+          border-left: 5px solid var(--skin-color);
+          left: 0;
+          top: 0;
+        }
+
+        .home .home-img::after {
+          border-bottom: 5px solid var(--skin-color);
+          border-right: 5px solid var(--skin-color);
+          right: 0;
+          bottom: 0;
+        }
+
+        .home .home-img img {
+          height: auto;
+          max-width: 80%;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .home-btn {
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 3;
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        .home-info p {
+          margin-bottom: 0;
         }
 
         .about .about-content .skills,
@@ -926,19 +1045,19 @@ color-5.css
 
         <ul class="nav">
           <li>
-            <a href="#home" class="active"><i class="fa fa-home"></i>Home</a>
+            <a href="#home" class="active"><i class="fa fa-home"></i>Início</a>
           </li>
           <li>
-            <a href="#about"><i class="fa fa-user"></i>About</a>
+            <a href="#about"><i class="fa fa-user"></i>Sobre</a>
           </li>
           <li>
-            <a href="#services"><i class="fa fa-list"></i>Services</a>
+            <a href="#services"><i class="fa fa-list"></i>Serviços</a>
           </li>
           <li>
-            <a href="#portfolio"><i class="fa fa-briefcase"></i>Portfolio</a>
+            <a href="#portfolio"><i class="fa fa-briefcase"></i>Portfólio</a>
           </li>
           <li>
-            <a href="#contact"><i class="fa fa-comments"></i>Contact</a>
+            <a href="#contact"><i class="fa fa-comments"></i>Contato</a>
           </li>
         </ul>
       </div>
@@ -946,26 +1065,26 @@ color-5.css
       <div class="main-content">
         <section class="home section active" id="home">
           <div class="container">
-            <div class="row">
+            <div class="row home-row">
               <div class="home-info padd-15">
                 <h3 class="hello">
-                  Hello, my name is <span class="name">Matheus Capretz</span>
+                  Olá, meu nome é <span class="name">Matheus Capretz</span>
                 </h3>
                 <h3 class="profession">
-                  I'm a <span class="typing">Fillmaker</span>
+                  Eu sou <span class="typing">Filmmaker</span>
                 </h3>
                 <p>
-                  I'm a web designer with extensive experience. My experience is to create website designs, graphic
-                  designs and much more...
+                  Sou um designer web com vasta experiência. Minha experiência inclui criação de designs de sites,
+                  designs gráficos e muito mais...
                 </p>
-                <a href="#" class="btn">Download CV</a>
               </div>
 
               <div class="home-img padd-15">
-                <img
-                  src="./assets/images/matt.jpeg"
-                  alt="hero image"
-                />
+                <img src="./assets/images/matt.jpeg" alt="foto do Matheus" />
+              </div>
+
+              <div class="home-btn padd-15">
+                <a href="#" class="btn">Download CV</a>
               </div>
             </div>
           </div>
@@ -975,7 +1094,7 @@ color-5.css
           <div class="container">
             <div class="row">
               <div class="section-title padd-15">
-                <h2>About me</h2>
+                <h2>Sobre mim</h2>
               </div>
             </div>
 
@@ -983,16 +1102,16 @@ color-5.css
               <div class="about-content padd-15">
                 <div class="row">
                   <div class="about-text padd-15">
-                    <h3>I'm Matheus Capretz and <span>Fillmaker</span></h3>
+                    <h3>Eu sou Matheus Capretz e <span>Filmmaker</span></h3>
                     <p>
-                      As a web designer, I'm specialized in creating visually
-                      appealing websites that not only captivate visitors but
-                      also provide seamless navigation and functionality. I
-                      continuously seek inspiration from current design trends
-                      and am committed to honing my skills through ongoing
-                      learning and experimentation. My ultimate goal is to craft
-                      digital experiences that engage users and drive results
-                      for my clients
+                      Como designer web, sou especializado em criar websites visualmente
+                      atraentes que não apenas cativam os visitantes, mas
+                      também oferecem navegação e funcionalidade perfeitas. Eu
+                      busco continuamente inspiração nas tendências de design atuais
+                      e estou comprometido em aprimorar minhas habilidades por meio de
+                      aprendizado e experimentação contínuos. Meu objetivo final é criar
+                      experiências digitais que envolvam os usuários e gerem resultados
+                      para meus clientes
                     </p>
                   </div>
                 </div>
@@ -1002,19 +1121,19 @@ color-5.css
                     <div class="row">
 
                       <div class="info-item padd-15">
-                        <p>Age: <span>17</span></p>
+                        <p>Idade: <span>17</span></p>
                       </div>
 
                       <div class="info-item padd-15">
-                        <p>Phone: <span>+55 (19) 99696-9566</span></p>
+                        <p>Telefone: <span>+55 (19) 99696-9566</span></p>
                       </div>
 
                       <div class="info-item padd-15">
-                        <p>City: <span>Rio Claro - SP</span></p>
+                        <p>Cidade: <span>Rio Claro - SP</span></p>
                       </div>
 
                       <div class="info-item padd-15">
-                        <p>Freelance: <span>Available</span></p>
+                        <p>Freelance: <span>Disponível</span></p>
                       </div>
 
                     </div>
@@ -1025,7 +1144,7 @@ color-5.css
                           href="#contact"
                           class="btn hire-me"
                           data-section-index="1"
-                          >Hire me!</a
+                          >Contrate-me!</a
                         >
                       </div>
                     </div>
@@ -1033,7 +1152,7 @@ color-5.css
 
                 <div class="row">
                   <div class="education padd-15">
-                    <h3 class="title">Education</h3>
+                    <h3 class="title">Educação</h3>
                     <div class="row">
                       <div class="timeline-box padd-15">
                         <div class="timeline shadow-dark">
@@ -1043,15 +1162,15 @@ color-5.css
                               <i class="fa fa-calendar"></i> 2013 - 2015
                             </h3>
                             <h4 class="timeline-title">
-                              Master in Computer Science
+                              Mestrado em Ciência da Computação
                             </h4>
                             <p class="timeline-text">
-                              I learnt a wide range of topics that are essential
-                              to understanding both the theory and practical
-                              aspects of computing. This involves programming
-                              fundamentals, computer architecture, operating
-                              systems, databases, software engineering, problem
-                              solving, collaboration and communication soft
+                              Aprendi uma ampla gama de tópicos que são essenciais
+                              para entender tanto a teoria quanto a prática
+                              da computação. Isso envolve fundamentos de programação,
+                              arquitetura de computadores, sistemas operacionais,
+                              bancos de dados, engenharia de software, resolução
+                              de problemas, colaboração e comunicação de soft
                               skills.
                             </p>
                           </div>
@@ -1061,12 +1180,12 @@ color-5.css
                             <h3 class="timeline-date">
                               <i class="fa fa-calendar"></i> 2011 - 2014
                             </h3>
-                            <h4 class="timeline-title">Master Degree</h4>
+                            <h4 class="timeline-title">Graduação em Tecnologia</h4>
                             <p class="timeline-text">
-                              I chose my master degree in technology. There I
-                              deepened my knowledge, enhanced my skills in the
-                              area and learnt how to increase my career
-                              prospects in a competitive job market.
+                              Aprofundei meus conhecimentos e desenvolvi habilidades
+                              na área, além de aprender a aumentar minhas
+                              perspectivas de carreira em um mercado de trabalho
+                              competitivo.
                             </p>
                           </div>
 
@@ -1075,13 +1194,13 @@ color-5.css
                             <h3 class="timeline-date">
                               <i class="fa fa-calendar"></i> 2007 - 2010
                             </h3>
-                            <h4 class="timeline-title">Bachelor Degree</h4>
+                            <h4 class="timeline-title">Bacharelado</h4>
                             <p class="timeline-text">
-                              There I learnt foundational courses and computer
-                              sciences fundamentals. In the institution, I chose
-                              my specialization in web-development that involves
-                              front-end and back-end technologies, user
-                              interface designs and content management systems.
+                              Aprendi cursos fundamentais e os princípios básicos
+                              das ciências da computação. Na instituição, escolhi
+                              minha especialização em desenvolvimento web, que envolve
+                              tecnologias front-end e back-end, design de interface
+                              do usuário e sistemas de gerenciamento de conteúdo.
                             </p>
                           </div>
                         </div>
@@ -1090,24 +1209,24 @@ color-5.css
                   </div>
 
                   <div class="experience padd-15">
-                    <h3 class="title">Experience</h3>
+                    <h3 class="title">Experiência</h3>
                     <div class="row">
                       <div class="timeline-box padd-15">
                         <div class="timeline shadow-dark">
                           <div class="timeline-item">
                             <div class="circle-dot"></div>
                             <h3 class="timeline-date">
-                              <i class="fa fa-calendar"></i> 2020 - Today
+                              <i class="fa fa-calendar"></i> 2020 - Hoje
                             </h3>
                             <h4 class="timeline-title">
-                              Senior Front-end Designer
+                              Designer Front-end Sênior
                             </h4>
                             <p class="timeline-text">
-                              I can design complex software systems. My
-                              decisions impact scalability, maintainability, and
-                              overall system architecture. Also, I mentor less
-                              experienced team members, helping them grow and
-                              learn.
+                              Consigo projetar sistemas de software complexos. Minhas
+                              decisões impactam a escalabilidade, manutenibilidade e
+                              a arquitetura geral do sistema. Além disso, mentoro membros
+                              da equipe menos experientes, ajudando-os a crescer e
+                              aprender.
                             </p>
                           </div>
 
@@ -1117,14 +1236,14 @@ color-5.css
                               <i class="fa fa-calendar"></i> 2017 - 2019
                             </h3>
                             <h4 class="timeline-title">
-                              Junior Front-end Designer
+                              Designer Front-end Júnior
                             </h4>
                             <p class="timeline-text">
-                              I learnt to code in an existing codebase, dive
-                              into the project and understanding its structure.
-                              Also I worked closely with senior software
-                              engineers that guided me, answered my questions
-                              and helped me grow.
+                              Aprendi a programar em uma base de código existente,
+                              mergulhar no projeto e entender sua estrutura.
+                              Também trabalhei em estreita colaboração com engenheiros
+                              de software sêniores que me orientaram, responderam
+                              minhas perguntas e me ajudaram a crescer.
                             </p>
                           </div>
 
@@ -1133,12 +1252,12 @@ color-5.css
                             <h3 class="timeline-date">
                               <i class="fa fa-calendar"></i> 2014 - 2016
                             </h3>
-                            <h4 class="timeline-title">Graphic Designer</h4>
+                            <h4 class="timeline-title">Designer Gráfico</h4>
                             <p class="timeline-text">
-                              I can create logos, color schemes and typography
-                              for a brand's identity. Also I develop graphics
-                              for websites, social media and digital ads with
-                              applications that enhance user experience.
+                              Consigo criar logotipos, esquemas de cores e tipografia
+                              para a identidade de uma marca. Além disso, desenvolvo
+                              gráficos para websites, mídias sociais e anúncios digitais
+                              com aplicações que melhoram a experiência do usuário.
                             </p>
                           </div>
                         </div>
@@ -1155,7 +1274,7 @@ color-5.css
           <div class="container">
             <div class="row">
               <div class="section-title padd-15">
-                <h2>Services</h2>
+                <h2>Serviços</h2>
               </div>
             </div>
 
@@ -1165,11 +1284,11 @@ color-5.css
                   <div class="icon">
                     <i class="fa fa-mobile-alt"></i>
                   </div>
-                  <h4>Fillmaker</h4>
+                  <h4>Filmmaker</h4>
                   <p>
-                    I offer custom website designs, responsive design to ensure
-                    compatibility across devices, and UI/UX design to enhance
-                    user experience
+                    Ofereço designs de sites personalizados, design responsivo para garantir
+                    compatibilidade entre dispositivos, e design de UI/UX para melhorar
+                    a experiência do usuário
                   </p>
                 </div>
               </div>
@@ -1179,11 +1298,10 @@ color-5.css
                   <div class="icon">
                     <i class="fa fa-laptop-code"></i>
                   </div>
-                  <h4>Graphic Design</h4>
+                  <h4>Design Gráfico</h4>
                   <p>
-                    I design logos, icons, illustrations, and other visual
-                    assets that enhance the website's branding and aesthetic
-                    appeal
+                    Crio logotipos, ícones, ilustrações e outros elementos visuais
+                    que aprimoram a identidade e a estética do site
                   </p>
                 </div>
               </div>
@@ -1193,11 +1311,11 @@ color-5.css
                   <div class="icon">
                     <i class="fa fa-palette"></i>
                   </div>
-                  <h4>Digital Marketing</h4>
+                  <h4>Marketing Digital</h4>
                   <p>
-                    I build websites that enhances visual aesthetics, user
-                    experience, SEO, responsive design and mainly conversion
-                    optimization
+                    Desenvolvo websites que melhoram a estética visual, a experiência
+                    do usuário, SEO, design responsivo e, principalmente, a otimização
+                    da conversão
                   </p>
                 </div>
               </div>
@@ -1207,10 +1325,10 @@ color-5.css
                   <div class="icon">
                     <i class="fa fa-code"></i>
                   </div>
-                  <h4>UI/UX Solutions</h4>
+                  <h4>Soluções de UI/UX</h4>
                   <p>
-                    I offer custom research and design to increase your customer
-                    satisfaction and obtain higher conversion rates
+                    Ofereço pesquisa e design personalizados para aumentar a satisfação
+                    do cliente e obter taxas de conversão mais altas
                   </p>
                 </div>
               </div>
@@ -1220,10 +1338,10 @@ color-5.css
                   <div class="icon">
                     <i class="fa fa-search"></i>
                   </div>
-                  <h4>Brand Consultancy</h4>
+                  <h4>Consultoria de Marca</h4>
                   <p>
-                    I build brands through cultural insights & strategic vision.
-                    Custom crafted business solution
+                    Construo marcas por meio de insights culturais e visão estratégica.
+                    Solução de negócios sob medida
                   </p>
                 </div>
               </div>
@@ -1233,10 +1351,10 @@ color-5.css
                   <div class="icon">
                     <i class="fa fa-bullhorn"></i>
                   </div>
-                  <h4>Photography</h4>
+                  <h4>Fotografia</h4>
                   <p>
-                    I make high-quality photos of any category at a professional
-                    level.
+                    Faço fotos de alta qualidade de qualquer categoria em nível
+                    profissional.
                   </p>
                 </div>
               </div>
@@ -1248,13 +1366,13 @@ color-5.css
           <div class="container">
             <div class="row">
               <div class="section-title padd-15">
-                <h2>Portfolio</h2>
+                <h2>Portfólio</h2>
               </div>
             </div>
 
             <div class="row">
               <div class="portfolio-heading padd-15">
-                <h2>My Last Projects:</h2>
+                <h2>Meus Últimos Projetos:</h2>
               </div>
             </div>
 
@@ -1264,7 +1382,7 @@ color-5.css
                   <div class="portfolio-img">
                     <img
                       src="https://i.postimg.cc/NGkQB1Y0/portfolio-1.jpg"
-                      alt="portfolio image"
+                      alt="imagem do portfólio"
                     />
                   </div>
                 </div>
@@ -1275,7 +1393,7 @@ color-5.css
                   <div class="portfolio-img">
                     <img
                       src="https://i.postimg.cc/ydg49Z3w/portfolio-2.jpg"
-                      alt="portfolio image"
+                      alt="imagem do portfólio"
                     />
                   </div>
                 </div>
@@ -1286,7 +1404,7 @@ color-5.css
                   <div class="portfolio-img">
                     <img
                       src="https://i.postimg.cc/RVPdrbDL/portfolio-3.jpg"
-                      alt="portfolio image"
+                      alt="imagem do portfólio"
                     />
                   </div>
                 </div>
@@ -1297,7 +1415,7 @@ color-5.css
                   <div class="portfolio-img">
                     <img
                       src="https://i.postimg.cc/25dBY15N/portfolio-4.jpg"
-                      alt="portfolio image"
+                      alt="imagem do portfólio"
                     />
                   </div>
                 </div>
@@ -1308,7 +1426,7 @@ color-5.css
                   <div class="portfolio-img">
                     <img
                       src="https://i.postimg.cc/RZBHD1ML/portfolio-5.jpg"
-                      alt="portfolio image"
+                      alt="imagem do portfólio"
                     />
                   </div>
                 </div>
@@ -1319,7 +1437,7 @@ color-5.css
                   <div class="portfolio-img">
                     <img
                       src="https://i.postimg.cc/3wP7t1hK/portfolio-6.jpg"
-                      alt="portfolio image"
+                      alt="imagem do portfólio"
                     />
                   </div>
                 </div>
@@ -1332,31 +1450,27 @@ color-5.css
           <div class="container">
             <div class="row">
               <div class="section-title padd-15">
-                <h2>Contact</h2>
+                <h2>Contato</h2>
               </div>
             </div>
 
-            <h3 class="contact-title padd-15">Any Question? Contact us!</h3>
-            <h4 class="contact-subtitle padd-15">I'm at your service</h4>
+            <h3 class="contact-title padd-15">Alguma Dúvida? Entre em Contato!</h3>
+            <h4 class="contact-subtitle padd-15">Estou à sua disposição</h4>
 
             <div class="row">
-<a
-  href="https://wa.me/5519996969566"
-  class="contact-info-item padd-15"
-  style="text-decoration: none; color: inherit;"
->
-  <div class="icon"><i class="fa fa-phone"></i></div>
-  <h4>Call us on</h4>
-  <p>+55 (19) 99696-9566</p>
-</a>
+              <div class="contact-info-item padd-15">
+                <div class="icon"><i class="fa fa-phone"></i></div>
+                <h4>Telefone</h4>
+                <p>+55 (19) 99696-9566</p>
+              </div>
 
               <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                <h4>Office</h4>
+                <h4>Escritório</h4>
                 <p>Rio Claro - SP</p>
               </div>
 
-<a
+              <a
   href="https://www.instagram.com/theuz_capretz/"
   target="_blank"
   rel="noopener noreferrer"
@@ -1369,9 +1483,9 @@ color-5.css
 </a>
 
             </div>
-            <h3 class="contact-title padd-15">Send me an email</h3>
+            <h3 class="contact-title padd-15">Envie-me um e-mail</h3>
             <h4 class="contact-subtitle padd-15">
-              I'll contact you as soon as possible!
+              Entrarei em contato assim que possível!
             </h4>
 
 <form
@@ -1387,7 +1501,7 @@ color-5.css
           type="text"
           name="name"
           class="form-control"
-          placeholder="Name"
+          placeholder="Nome"
           required
         />
       </div>
@@ -1399,7 +1513,7 @@ color-5.css
           type="email"
           name="email"
           class="form-control"
-          placeholder="Email"
+          placeholder="E-mail"
           required
         />
       </div>
@@ -1413,7 +1527,7 @@ color-5.css
           type="text"
           name="subject"
           class="form-control"
-          placeholder="Subject"
+          placeholder="Assunto"
           required
         />
       </div>
@@ -1427,7 +1541,7 @@ color-5.css
           name="message"
           id="message"
           class="form-control"
-          placeholder="Message"
+          placeholder="Mensagem"
           required
         ></textarea>
       </div>
@@ -1437,7 +1551,7 @@ color-5.css
   <div class="row">
     <div class="form-item col-12 padd-15">
       <div class="form-group">
-        <button type="submit" class="btn">Send Message</button>
+        <button type="submit" class="btn">Enviar Mensagem</button>
       </div>
     </div>
   </div>
@@ -1458,7 +1572,7 @@ color-5.css
         <i class="fas"></i>
       </div>
 
-      <h4>Theme Colors</h4>
+      <h4>Cores do Tema</h4>
 
       <div class="colors">
         <span class="color-1" onclick="setActiveStyle('color-1')"></span>
@@ -1470,7 +1584,6 @@ color-5.css
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-    <script src="app.js"></script>
 
     <script>
       /* Toggle Style Switcher */
@@ -1523,9 +1636,9 @@ color-5.css
       var typed = new Typed(".typing", {
         strings: [
           "",
-          "Fillmaker",
-          "Photographer",
-          "Graphic Designer",
+          "Filmmaker",
+          "Fotógrafo",
+          "Designer Gráfico",
         ],
         typeSpeed: 100,
         Backspeed: 60,
@@ -1643,22 +1756,22 @@ color-5.css
       }
 
       if (name === "") {
-        showError(document.querySelector('[name="name"]'), "Please enter your name.");
+        showError(document.querySelector('[name="name"]'), "Por favor, insira seu nome.");
         valid = false;
       }
 
       if (!emailRegex.test(email)) {
-        showError(document.querySelector('[name="email"]'), "Please enter a valid email.");
+        showError(document.querySelector('[name="email"]'), "Por favor, insira um e-mail válido.");
         valid = false;
       }
 
       if (subject === "") {
-        showError(document.querySelector('[name="subject"]'), "Please enter a subject.");
+        showError(document.querySelector('[name="subject"]'), "Por favor, insira um assunto.");
         valid = false;
       }
 
       if (message === "") {
-        showError(document.querySelector('[name="message"]'), "Please enter a message.");
+        showError(document.querySelector('[name="message"]'), "Por favor, insira uma mensagem.");
         valid = false;
       }
 
@@ -1669,7 +1782,3 @@ color-5.css
     </script>
   </body>
 </html>
-
-
-
-
