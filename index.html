@@ -695,33 +695,6 @@
     });
 
 window.addEventListener('load', () => {
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-    });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    const portfolioContainer = document.querySelector('.portfolio-container');
-    const portfolioImage = document.querySelector('.portfolio-image img');
-
-    window.addEventListener('scroll', () => {
-        if(!portfolioContainer || !portfolioImage) return;
-
-        const rect = portfolioContainer.getBoundingClientRect();
-        const scrollPercentage = Math.min(1, Math.max(0, -rect.top) / (rect.height - window.innerHeight));
-        
-        const scale = 1 + (scrollPercentage * 4);
-        portfolioImage.style.transform = `scale(${scale})`;
-    });
-});
-
-window.addEventListener('load', () => {
   const portfolioGroups = document.querySelectorAll('.portfolio-group');
   const lenis = new Lenis();
 
@@ -857,6 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
   </body>
 </html>
+
 
 
 
