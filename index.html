@@ -51,19 +51,21 @@
       disabled
     />
 
-        <style>
-          .footer-credit {
+  <style>
+  .aside-credit {
+  position: absolute;
+  bottom: 30px; /* Alinha na parte de baixo do aside */
+  left: 0;
+  width: 100%;
   text-align: center;
-  padding: 20px 15px;
-  margin-top: 20px; /* Separa o texto do formulário de contato */
 }
 
-.footer-credit p {
-  font-size: 14px;
-  color: var(--text-black700); /* Usa a cor de texto sutil do seu tema */
+.aside-credit p {
+  font-size: 12px;
+  color: var(--text-black700);
   font-weight: 400;
 }
-       </style>
+  </style>
     
   </head>
   <body class="dark">
@@ -93,8 +95,12 @@
           <li>
             <a href="#contact"><i class="fa fa-comments"></i>Contato</a>
           </li>
+          
         </ul>
+      <div class="aside-credit">
+        <p>Made in China</p>
       </div>
+    </div>
 
       <div class="main-content">
         <section class="home section active" id="home">
@@ -497,9 +503,6 @@
             </div>
           </div>
         </section>
-       <div class="footer-credit padd-15">
-      <p>Made in China</p>
-       </div>
       </div>
     </div>
 
@@ -837,6 +840,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
   </body>
 </html>
+
 
 
 
