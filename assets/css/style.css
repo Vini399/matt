@@ -731,7 +731,7 @@
       }
       .contact .contact-form .btn {
         height: 50px;
-        padding: 0 50px;
+        width: 100%;
         cursor: pointer;
         font-family: "Poppins", sans-serif;
       }
@@ -1383,3 +1383,4 @@ color-5.css
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   padding: 10px 0;
 }
+
