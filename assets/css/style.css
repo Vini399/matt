@@ -1162,8 +1162,8 @@ color-5.css
   background-clip: padding-box;
 }
 .gallery-content {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(48,46,77,0.12) transparent;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 12%) transparent;
 }
 
 @media (max-width: 700px) {
@@ -1384,4 +1384,5 @@ color-5.css
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   padding: 10px 0;
 }
+
 
