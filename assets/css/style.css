@@ -7,7 +7,7 @@
         --text-black900: #302e4d;
         --text-black700: #504e70;
 
-        --skin-color: #ec1839;
+        --skin-color: #1d2cff;
       }
 
       body.dark {
@@ -16,6 +16,8 @@
         --bg-black50: #393939;
         --text-black900: #ffffff;
         --text-black700: #e9e9e9;
+
+        --skin-color: #ec1839;
       }
 
       * {
@@ -44,7 +46,7 @@
         opacity: 1;
         padding: 0 30px;
         position: fixed;
-        left: 270px;
+        left: 200px; /* atualizado para combinar com a largura da aside */
         top: 0;
         right: 0;
         bottom: 0;
@@ -122,6 +124,7 @@
         margin-left: -15px;
         margin-right: -15px;
         position: relative;
+        justify-content: center;
       }
       .btn {
         font-size: 16px;
@@ -145,7 +148,7 @@
       /* ASIDE */
 
       .aside {
-        width: 270px;
+        width: 200px; /* reduzido para 200px */
         background: var(--bg-black100);
         position: fixed;
         left: 0;
@@ -224,7 +227,7 @@
         border: 1px solid var(--bg-black50);
         cursor: pointer;
         position: fixed;
-        left: 300px;
+        left: 240px; /* 200 + 40 para posicionamento do botão */
         top: 20px;
         border-radius: 5px;
         background: var(--bg-black100);
@@ -333,6 +336,71 @@
         height: 400px;
         margin: auto;
         border-radius: 4px;
+      }
+
+      /* Ajustes para mobile */
+      @media (max-width: 991px) {
+        .home-row {
+          flex-direction: column;
+        }
+        
+        .home .home-info {
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 1;
+          margin-bottom: 30px;
+        }
+
+        .home .home-img {
+          display: block;
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 2;
+          position: relative;
+          margin: 20px 0;
+          padding: 20px;
+        }
+
+        .home .home-img::before,
+        .home .home-img::after {
+          content: "";
+          position: absolute;
+          height: 40px; /* Reduzido de 80px */
+          width: 40px; /* Reduzido de 80px */
+        }
+
+        .home .home-img::before {
+          border-top: 5px solid var(--skin-color); /* Reduzido de 10px */
+          border-left: 5px solid var(--skin-color);
+          left: 0;
+          top: 0;
+        }
+
+        .home .home-img::after {
+          border-bottom: 5px solid var(--skin-color);
+          border-right: 5px solid var(--skin-color);
+          right: 0;
+          bottom: 0;
+        }
+
+        .home .home-img img {
+          height: auto;
+          max-width: 80%;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .home-btn {
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 3;
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        .home-info p {
+          margin-bottom: 0;
+        }
       }
 
       /* ABOUT */
@@ -670,7 +738,7 @@
 
       @media (max-width: 1199px) {
         .aside {
-          left: -270px;
+          left: -200px;
         }
         .aside.open {
           left: 0;
@@ -680,13 +748,13 @@
           left: 30px;
         }
         .aside .nav-toggler.open {
-          left: 300px;
+          left: 240px; /* corresponde ao valor desktop quando aberto */
         }
         .section {
           left: 0;
         }
         .section.open {
-          left: 270px;
+          left: 200px; /* antes 270px */
         }
         .section .container {
           padding-top: 70px;
@@ -704,12 +772,66 @@
       }
 
       @media (max-width: 991px) {
+        .home-row {
+          flex-direction: column;
+        }
+        
         .home .home-info {
           flex: 0 0 100%;
           max-width: 100%;
+          order: 1;
+          margin-bottom: 30px;
         }
+
         .home .home-img {
-          display: none;
+          display: block;
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 2;
+          position: relative;
+          margin: 20px 0;
+          padding: 20px;
+        }
+
+        .home .home-img::before,
+        .home .home-img::after {
+          content: "";
+          position: absolute;
+          height: 40px; /* Reduzido de 80px */
+          width: 40px; /* Reduzido de 80px */
+        }
+
+        .home .home-img::before {
+          border-top: 5px solid var(--skin-color); /* Reduzido de 10px */
+          border-left: 5px solid var(--skin-color);
+          left: 0;
+          top: 0;
+        }
+
+        .home .home-img::after {
+          border-bottom: 5px solid var(--skin-color);
+          border-right: 5px solid var(--skin-color);
+          right: 0;
+          bottom: 0;
+        }
+
+        .home .home-img img {
+          height: auto;
+          max-width: 80%;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .home-btn {
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 3;
+          text-align: center;
+          margin-top: 30px;
+        }
+
+        .home-info p {
+          margin-bottom: 0;
         }
 
         .about .about-content .skills,
@@ -819,6 +941,10 @@
       .style-switcher .color-5 {
         background: #f021b2;
       }
+      /* Esconder o switcher quando a galeria estiver ativa */
+      .style-switcher.hidden-by-gallery {
+        display: none !important;
+      }
 
       /* Create more 5 css files to enable Toggle style Switcher */
 
@@ -855,3 +981,405 @@ color-5.css
 }
 
 */
+
+ /* Portfolio Layout Effect */
+.portfolio-container {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.portfolio-group {
+  position: relative;
+  height: 80vh;
+  background: var(--bg-black900);
+  border: 1px solid var(--bg-black50);
+  border-radius: 20px;
+  padding: 3.5rem 2rem 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.portfolio-group:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.project-title {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  z-index: 5;
+  margin-bottom: 2rem;
+}
+
+.portfolio-image {
+  position: absolute;
+  width: 200px;
+  transform-origin: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Posições ajustadas */
+.project-porche .portfolio-image:nth-child(2) { top: 15%; left: 15%; transform: rotate(-12deg); }
+.project-porche .portfolio-image:nth-child(3) { top: 17%; left: 50%; transform: rotate(8deg); }
+.project-porche .portfolio-image:nth-child(4) { top: 55%; left: 10%; transform: rotate(-5deg); }
+.project-porche .portfolio-image:nth-child(5) { top: 50%; left: 55%; transform: rotate(10deg); }
+
+.project-cantor .portfolio-image:nth-child(2) { top: 15%; left: 5%; transform: rotate(-8deg); }
+.project-cantor .portfolio-image:nth-child(3) { top: 15%; left: 50%; transform: rotate(10deg); }
+.project-cantor .portfolio-image:nth-child(4) { top: 50%; left: 5%; transform: rotate(-5deg); }
+.project-cantor .portfolio-image:nth-child(5) { top: 50%; left: 55%; transform: rotate(8deg); }
+
+/* Hover e interação */
+.portfolio-image:hover {
+  z-index: 10;
+  transform: scale(1.2) rotate(0deg) !important;
+}
+
+/* Estado agrupado */
+.portfolio-group.active .portfolio-image {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.portfolio-group.active .portfolio-image:first-child {
+  opacity: 1;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1.5) rotate(0deg) !important;
+  z-index: 11;
+}
+
+/* manter título legível com menu menor */
+.project-title {
+  left: 16px;
+  font-size: 18px;
+}
+
+/* Gallery Modal: caixa delimitada */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* overlay mais leve */
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.gallery-box {
+  position: relative;
+  width: min(1100px, 92%);
+  max-height: 85vh;
+  background: var(--bg-black100);
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* área de conteúdo com scrollbar "presa" à caixa */
+.gallery-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(85vh - 70px); /* reserva espaço para título/controls */
+  padding-right: 8px;
+}
+
+/* estilo mais vertical para imagens dentro do conteúdo */
+.gallery-images {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+/* imagens limitadas e responsivas */
+.gallery-images img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease;
+}
+
+/* botão de fechar fica acima da caixa (não sobre a scrollbar) */
+.close-gallery {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-black900);
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 5; /* garante ficar acima do conteúdo */
+}
+
+/* custom scrollbar (WebKit + fallback visual) */
+.gallery-content::-webkit-scrollbar {
+  width: 10px;
+}
+.gallery-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.gallery-content::-webkit-scrollbar-thumb {
+  background: rgba(48,46,77,0.12);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.gallery-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(48,46,77,0.12) transparent;
+}
+
+/* responsivo */
+@media (max-width: 700px) {
+  .gallery-box { width: 95%; padding: 14px; }
+  .close-gallery { font-size: 26px; top: 8px; right: 10px; }
+  .gallery-title { font-size: 18px; }
+  .portfolio-image { width: 96px; }
+}
+
+/* Gallery Modal styles */
+.gallery-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 10px 0;
+}
+
+/* Portfolio Layout Effect */
+.portfolio-container {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.portfolio-group {
+  position: relative;
+  height: 80vh;
+  background: var(--bg-black900);
+  border: 1px solid var(--bg-black50);
+  border-radius: 20px;
+  padding: 3.5rem 2rem 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.portfolio-group:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.project-title {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  z-index: 5;
+  margin-bottom: 2rem;
+}
+
+.portfolio-image {
+  position: absolute;
+  width: 200px;
+  transform-origin: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Posições ajustadas */
+.project-porche .portfolio-image:nth-child(2) { top: 15%; left: 15%; transform: rotate(-12deg); }
+.project-porche .portfolio-image:nth-child(3) { top: 17%; left: 50%; transform: rotate(8deg); }
+.project-porche .portfolio-image:nth-child(4) { top: 55%; left: 10%; transform: rotate(-5deg); }
+.project-porche .portfolio-image:nth-child(5) { top: 50%; left: 55%; transform: rotate(10deg); }
+
+.project-cantor .portfolio-image:nth-child(2) { top: 15%; left: 5%; transform: rotate(-8deg); }
+.project-cantor .portfolio-image:nth-child(3) { top: 15%; left: 50%; transform: rotate(10deg); }
+.project-cantor .portfolio-image:nth-child(4) { top: 50%; left: 5%; transform: rotate(-5deg); }
+.project-cantor .portfolio-image:nth-child(5) { top: 50%; left: 55%; transform: rotate(8deg); }
+
+/* Hover e interação */
+.portfolio-image:hover {
+  z-index: 10;
+  transform: scale(1.2) rotate(0deg) !important;
+}
+
+/* Estado agrupado */
+.portfolio-group.active .portfolio-image {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.portfolio-group.active .portfolio-image:first-child {
+  opacity: 1;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1.5) rotate(0deg) !important;
+  z-index: 11;
+}
+
+/* manter título legível com menu menor */
+.project-title {
+  left: 16px;
+  font-size: 18px;
+}
+
+/* Gallery Modal: caixa delimitada */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* overlay mais leve */
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.gallery-box {
+  position: relative;
+  width: min(1100px, 92%);
+  max-height: 85vh;
+  background: var(--bg-black100);
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* área de conteúdo com scrollbar "presa" à caixa */
+.gallery-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(85vh - 70px); /* reserva espaço para título/controls */
+  padding-right: 8px;
+}
+
+/* estilo mais vertical para imagens dentro do conteúdo */
+.gallery-images {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+/* imagens limitadas e responsivas */
+.gallery-images img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease;
+}
+
+/* botão de fechar fica acima da caixa (não sobre a scrollbar) */
+.close-gallery {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-black900);
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 5; /* garante ficar acima do conteúdo */
+}
+
+/* custom scrollbar (WebKit + fallback visual) */
+.gallery-content::-webkit-scrollbar {
+  width: 10px;
+}
+.gallery-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.gallery-content::-webkit-scrollbar-thumb {
+  background: rgba(48,46,77,0.12);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.gallery-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(48,46,77,0.12) transparent;
+}
+
+/* responsivo */
+@media (max-width: 700px) {
+  .gallery-box { width: 95%; padding: 14px; }
+  .close-gallery { font-size: 26px; top: 8px; right: 10px; }
+  .gallery-title { font-size: 18px; }
+  .portfolio-image { width: 96px; }
+}
+
+/* Gallery Modal styles */
+.gallery-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 10px 0;
+}
