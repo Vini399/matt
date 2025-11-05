@@ -514,8 +514,6 @@
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
 
     <script>
-      /* Toggle Style Switcher */
-
       const styleSwitcherToggle = document.querySelector(
         ".style-switcher-toggler"
       );
@@ -542,8 +540,6 @@
         });
       }
 
-      /* Dark/Light Mode */
-
       const dayNight = document.querySelector(".day-night");
       dayNight.addEventListener("click", () => {
         dayNight.querySelector("i").classList.toggle("fa-sun");
@@ -559,8 +555,6 @@
         }
       });
 
-      /* Typing Animation */
-
       var typed = new Typed(".typing", {
         strings: [
           "",
@@ -572,8 +566,6 @@
         Backspeed: 60,
         loop: true,
       });
-
-      /* Changing Aside Active Link */
 
       const nav = document.querySelector(".nav");
       const navList = nav.querySelectorAll("li");
@@ -589,7 +581,7 @@
             if (navList[j].querySelector("a").classList.contains("active")) {
               addBackSection(
                 j
-              ); /*allSection[j].classList.add('back-section');*/
+              );
             }
             navList[j].querySelector("a").classList.remove("active");
           }
@@ -636,14 +628,11 @@
 
       document.querySelector(".hire-me").addEventListener("click", function () {
         const sectionIndex = this.getAttribute("data-section-index");
-        /*console.log(sectionIndex);*/
         showSection(this);
         updateNav(this);
         removeBackSection();
         addBackSection(sectionIndex);
       });
-
-      /* Activating Mobile Menu */
 
       const navTogglerBtn = document.querySelector(".nav-toggler");
       const aside = document.querySelector(".aside");
@@ -670,7 +659,6 @@
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      // Limpa erros anteriores
       document.querySelectorAll(".error-message").forEach((el) => el.remove());
 
       let valid = true;
@@ -704,13 +692,11 @@
       }
 
       if (!valid) {
-        event.preventDefault(); // impede o envio se algo estiver errado
+        event.preventDefault();
       }
     });
 
-    /* Portfolio Zoom Effect */
 window.addEventListener('load', () => {
-    // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
@@ -723,7 +709,6 @@ window.addEventListener('load', () => {
 
     requestAnimationFrame(raf);
 
-    // Zoom effect
     const portfolioContainer = document.querySelector('.portfolio-container');
     const portfolioImage = document.querySelector('.portfolio-image img');
 
@@ -733,7 +718,7 @@ window.addEventListener('load', () => {
         const rect = portfolioContainer.getBoundingClientRect();
         const scrollPercentage = Math.min(1, Math.max(0, -rect.top) / (rect.height - window.innerHeight));
         
-        const scale = 1 + (scrollPercentage * 4); // Adjust multiplier for zoom intensity
+        const scale = 1 + (scrollPercentage * 4);
         portfolioImage.style.transform = `scale(${scale})`;
     });
 });
@@ -755,7 +740,6 @@ window.addEventListener('load', () => {
           setTimeout(() => {
             group.classList.add('grouped');
             
-            // Mostrar vídeo após agrupar
             setTimeout(() => {
               const video = group.querySelector('.portfolio-video');
               if (video) {
@@ -781,7 +765,6 @@ window.addEventListener('load', () => {
   });
 });
 
-/* Portfolio Interactive Effect */
 document.addEventListener('DOMContentLoaded', () => {
   const portfolioGroups = document.querySelectorAll('.portfolio-group');
   const galleryModal = document.querySelector('.gallery-modal');
@@ -790,7 +773,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryContent = document.querySelector('.gallery-content');
   const closeGallery = document.querySelector('.close-gallery');
   const asideEl = document.querySelector('.aside');
-  const styleSwitcher = document.querySelector('.style-switcher'); // NOVO
+  const styleSwitcher = document.querySelector('.style-switcher');
 
   if (!galleryModal || !galleryTitle || !galleryImages || !galleryContent) return;
 
@@ -817,9 +800,8 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     if (asideEl) asideEl.classList.add('hidden-by-gallery');
-    if (styleSwitcher) styleSwitcher.classList.add('hidden-by-gallery'); // NOVO
+    if (styleSwitcher) styleSwitcher.classList.add('hidden-by-gallery');
 
-    // garantir que a barra de rolagem esteja no container da galeria e focada
     setTimeout(() => {
       galleryContent.scrollTop = 0;
       galleryContent.focus();
@@ -831,15 +813,13 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     if (asideEl) asideEl.classList.remove('hidden-by-gallery');
-    if (styleSwitcher) styleSwitcher.classList.remove('hidden-by-gallery'); // NOVO
+    if (styleSwitcher) styleSwitcher.classList.remove('hidden-by-gallery');
     setTimeout(() => { galleryImages.innerHTML = ''; }, 300);
   }
 
-  // Se o modal não existir, aborta com segurança
   if (!galleryModal || !galleryTitle || !galleryImages) return;
   
   portfolioGroups.forEach(group => {
-    // Hover effect on images
     const images = group.querySelectorAll('.portfolio-image');
     images.forEach(image => {
       image.addEventListener('mouseover', () => {
@@ -857,23 +837,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    // Click event to open gallery
     group.addEventListener('click', () => openGallery(group));
   });
   
-  // Close gallery (proteções)
   if (closeGallery) {
     closeGallery.addEventListener('click', closeGalleryFn);
   }
   
-  // Close on click outside
   galleryModal.addEventListener('click', (e) => {
     if (e.target === galleryModal && closeGallery) {
       closeGallery.click();
     }
   });
   
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && galleryModal.classList.contains('active') && closeGallery) {
       closeGallery.click();
@@ -883,8 +859,3 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
   </body>
 </html>
-
-
-
-
-
