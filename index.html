@@ -530,7 +530,8 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZHL58Y6MD"></script>
+    
     <script>
       const styleSwitcherToggle = document.querySelector(
         ".style-switcher-toggler"
@@ -915,9 +916,16 @@ if (window.location.hostname !== d) {
     }
   }, 1000);
 }
+      
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2ZHL58Y6MD');
     </script>
   </body>
 </html>
+
 
 
 
